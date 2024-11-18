@@ -1,0 +1,23 @@
+spring.application.name: time-window-streams
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    streams:
+      application-id: order-processing-app
+      properties:
+        processing.guarantee: exactly_once_v2
+        commit.interval.ms: 1000
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+#    org.apache.kafka.streams: DEBUG
+#    org.apache.kafka.clients: DEBUG
+    com.github.nmicra: DEBUG
